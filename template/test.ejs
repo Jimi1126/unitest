@@ -1,0 +1,16 @@
+/**
+ * generate by gee at <%- new Date().toLocaleString() %>
+ */
+const _assert_ = require('assert');
+const _target_ = require('<%- targetFileName.replace(/\\/g, '/') %>');
+const _test_ = require('<%- unitestFileName.replace(/\\/g, '/') %>');
+
+const tester = Object.assign(_test_, {
+  /* 需要新增或者覆盖的测试写这里 */
+});
+
+describe('测试文件：<%= targetName.replace(/\\/g, '/') %>', () => {
+  Object.keys(tester).forEach((key) => {
+    tester[key]();
+  });
+});

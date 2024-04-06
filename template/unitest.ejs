@@ -1,0 +1,44 @@
+<%
+const tryp_m = {
+  '*': "_random_.string('lower', 5, 20)",
+  'Object': '{}',
+  'Number': '_random_.integer(-10000, 1000)',
+  'String': "_random_.string('lower', 5, 20)",
+  'Function': 'function() {}',
+  'Boolean': '_random_.boolean()'
+}
+_%>
+/**
+ * generate by gee at <%- new Date().toLocaleString() %>
+ */ 
+const _assert_ = require('assert');
+const _mock_ = require('mockjs');
+const _target_ = require('<%- targetFileName.replace(/\\/g, '/') %>');
+const _random_ = _mock_.Random;
+<% for(let i = 0; i < fnComments.length; i++) { %>
+exports._test_<%- fnComments[i].name %> = function () {
+  describe('单元测试：<%- fnComments[i].name %>', () => {
+<% const params = (fnComments[i].params || []).map((it) => it.name) -%>
+<% const func = `${fnComments[i].name}(${params.join(', ')})` -%>
+<% if (fnComments[i].mock) { -%>
+<% for( let j = 0; j < (fnComments[i].params || []).length; j++) { -%>
+<% const param = fnComments[i].params[j]; -%>
+    const <%- param.name %> = <%- tryp_m[param.type] %>;
+<%}-%>
+    const res = _target_.<%- func  %>;
+<% } else { -%>
+<% for( let j = 0; j < (fnComments[i].params || []).length; j++) { -%>
+<% const param = fnComments[i].params[j]; -%>
+<% const val = param.type == 'Boolean' ? (/false/.test(param.default) ? false : true) : (param.type ? `${param.type}(${param.default})` : param.default) -%>
+    const <%- param.name %> = <%- val %>;
+<%}-%>
+<% let res = fnComments[i].res, resType = fnComments[i].resType;-%>
+<% res = resType == 'Boolean' ? (/false/.test(res) ? false : true) : (resType ? `${resType}(${res})` : res) -%>
+    const res = <%- res %>;
+<%}-%>
+    it(`<%- fnComments[i].name %>(<%- params.map((name) => `\${${name}}`).join(', ') %>) ${res}`, () => {
+      _assert_.deepEqual(_target_.<%- func  %>, res);
+    });
+  });
+};
+<%}-%>
