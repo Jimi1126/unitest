@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint lib --fix"
+    "lint": "eslint --fix"
   },
   "license": "ISC",
   "devDependencies": {
