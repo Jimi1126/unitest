@@ -1,0 +1,33 @@
+{
+  "name": "unitest",
+  "version": "1.0.0",
+  "description": "generate unit test",
+  "main": "index.js",
+  "author": "jimi1126",
+  "bin": {
+    "unitest": "./lib/cli.js"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint lib --fix"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/parser": "^7.14.0",
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@eslint/js": "^9.0.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "chalk": "^4.0.0",
+    "commander": "^12.0.0",
+    "ejs": "^3.1.6",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "husky": "^9.0.11",
+    "mkdirp": "^1.0.4",
+    "mockjs": "^1.1.0",
+    "ora": "^5.0.0",
+    "semantic-release": "^23.0.7"
+  }
+}
