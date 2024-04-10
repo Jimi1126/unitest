@@ -1,6 +1,6 @@
 {
   "name": "@jimi1126/unitest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "generate unit test",
   "main": "./lib/unitest.js",
   "author": "jimi1126",
