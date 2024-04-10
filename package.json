@@ -2,16 +2,15 @@
   "name": "unitest",
   "version": "1.0.0",
   "description": "generate unit test",
-  "main": "index.js",
+  "main": "./lib/unitest.js",
   "author": "jimi1126",
   "bin": {
     "unitest": "./lib/cli.js"
   },
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint lib --fix"
+    "lint": "eslint --fix"
   },
-  "license": "ISC",
   "devDependencies": {
     "@babel/parser": "^7.14.0",
     "@commitlint/cli": "^19.2.1",
@@ -29,5 +28,18 @@
     "mockjs": "^1.1.0",
     "ora": "^5.0.0",
     "semantic-release": "^23.0.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "test",
+    "unit test",
+    "generate test",
+    "test cli"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8"
   }
 }
