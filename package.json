@@ -30,7 +30,8 @@
     "semantic-release": "^23.0.7"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "org": "jimi1126"
   },
   "keywords": [
     "test",
