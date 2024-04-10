@@ -1,0 +1,6 @@
+/node_modules/
+.husky
+.commitlintrc
+.gitignore
+.releaserc
+eslint.config.mjs
