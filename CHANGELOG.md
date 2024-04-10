@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Jimi1126/unitest/compare/v1.0.0...v1.0.1) (2024-04-10)
+
+
+### Bug Fixes
+
+* 修复发包失败 ([ee3b292](https://github.com/Jimi1126/unitest/commit/ee3b292eca994b2006de1693e04024d9594ec8ee))
+
 # 1.0.0 (2024-04-10)
 
 
